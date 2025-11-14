@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for market_place project.
 
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'market_place.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,8 +69,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'market_place.wsgi.application'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'), 
+]
 
+WSGI_APPLICATION = 'market_place.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
