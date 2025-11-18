@@ -1,15 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from .models import *
+from items.models import *
+from .forms import *
 # Create your views here.
 def home_view(request:HttpRequest)-> HttpResponse:
+    Unsolditems = Item.objects.filter(is_sold=False)
+    categories = Category.objects.all()
     context = {
-        'categories':Category,
-        'items':Item,
+        'categories':categories,
+        'items':Unsolditems,
     }
     return render(request,'home.html',context)
-
+ 
 def item_view(request:HttpRequest)-> HttpResponse:
     context = {
         'categories':Category,
@@ -29,8 +33,14 @@ def signin_view(request:HttpRequest)-> HttpResponse:
     return render(request,'signin.html')
 
 def signup_view(request:HttpRequest)-> HttpResponse:
-    
-    return render(request,'signup.html')
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('/login/')
+    form = SignupForm()
+    return render(request,'signup.html', {'form':form})
 
 def cart_view(request:HttpRequest)-> HttpResponse:
     context = {
