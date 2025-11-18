@@ -13,7 +13,10 @@ def home_view(request:HttpRequest)-> HttpResponse:
         'items':Unsolditems,
     }
     return render(request,'home.html',context)
- 
+
+def css_test_view(request: HttpRequest)-> HttpResponse:
+    return render(request, 'home.html', {'my_model_instance': Item.objects.get(pk=1)})
+
 def item_view(request:HttpRequest)-> HttpResponse:
     context = {
         'categories':Category,

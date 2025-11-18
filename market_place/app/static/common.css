@@ -1,0 +1,61 @@
+#body {
+    background-color: rgb(49, 48, 48);
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: rgb(219, 219, 219);
+    padding: 0px;
+    margin: 0px;
+    margin-left: 50px;
+    display: flex; 
+    overflow: hidden;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+#searchbar {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+#options {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    display: flex;
+}
+
+#options-dropdown {
+    display: none;
+    background-color: rgb(219, 219, 219);
+}
+
+#options:hover #options-dropdown {
+    display: block;
+}
+
+#options-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.options-list-e {
+    margin-left: 20px;
+    align-items: center;
+}
+
+.extra-contents {
+    display: none;
+    background-color: rgb(206, 206, 206);
+    margin-top: 5px;
+}
+
+.options-list-e:hover .extra-contents {
+    display: block;
+}
