@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div id='container'>
+    <div id='itemlisting-container'>
+        <ul>
+            {% for i in items %}
+                <li class='sale-item'> 
+                    {{ i.name }}
+                </li>
+            {% empty %}
+                <li>None found</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}

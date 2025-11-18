@@ -2,13 +2,17 @@ from django.shortcuts import render
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from .models import *
-# Create your views here.
-def home_view(request:HttpRequest)-> HttpResponse:
+
+def css_test_view(request: HttpRequest)-> HttpResponse:
+    return render(request, 'home.html', {'my_model_instance': Item.objects.get(pk=1)})
+
+def home_view(request : HttpRequest)-> HttpResponse:
     context = {
-        'categories':Category,
-        'items':Item,
+        'categories': Category.objects.all(),
+        'items': Item.objects.all(),
     }
-    return render(request,'home.html',context)
+
+    return render(request, 'home.html', context)
 
 def item_view(request:HttpRequest)-> HttpResponse:
     context = {
