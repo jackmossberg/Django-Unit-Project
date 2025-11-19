@@ -51,7 +51,7 @@
         </div>
     </div>
     {% if request.user.is_authenticated %}
-        <a href="#">Unknown</a>
+        <a href="{% url 'item:new' %}">New Item</a>
         <a href="#">Unknown2</a>
     {% else %}
         <a href="{% url 'app:login' %}">Login</a>
