@@ -5,24 +5,17 @@ from .models import *
 from items.models import *
 from .forms import *
 # Create your views here.
-def home_view(request:HttpRequest)-> HttpResponse:
+def home(request:HttpRequest)-> HttpResponse:
     Unsolditems = Item.objects.filter(is_sold=False)
     categories = Category.objects.all()
     context = {
         'categories':categories,
         'items':Unsolditems,
     }
-    return render(request,'home.html',context)
+    return render(request,'app/home.html',context)
 
 def css_test_view(request: HttpRequest)-> HttpResponse:
     return render(request, 'home.html', {'my_model_instance': Item.objects.get(pk=1)})
-
-def item_view(request:HttpRequest)-> HttpResponse:
-    context = {
-        'categories':Category,
-        'items':Item,
-    }
-    return render(request,'item.html',context)
 
 def category_view(request:HttpRequest)-> HttpResponse:
     context = {

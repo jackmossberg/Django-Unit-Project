@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'items',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL ='media/'
-MEDIA_ROOT = BASE_DIR / 'meida'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Default primary key field type

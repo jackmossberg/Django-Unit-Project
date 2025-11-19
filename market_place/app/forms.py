@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 class SignupForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ('username', 'email', 'password','confirmpassword')
+        fields = ('name', 'email', 'password','confirmpassword')
 
-    username = forms.CharField(widget=forms.TextInput(attrs={
+    name = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Desired account name please',
         'class': 'w-full py-4 px-6 rounded-xl',
     }))

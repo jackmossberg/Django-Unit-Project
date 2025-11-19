@@ -59,3 +59,33 @@
 .options-list-e:hover .extra-contents {
     display: block;
 }
+.footer {
+    position:fixed;
+    left:0;
+    width:100vw;
+    height:20vh;
+    background-color: rgb(219, 219, 219);
+    display:flex;
+    justify-content: space-evenly;
+}
+.legalInfo{
+    display:flex;
+    flex-direction:column;
+    width:33%;
+}
+.footertxthead {
+    font-size:1rem;
+    margin:.3rem
+}
+.footertxt {
+    font-size:.8rem;
+    margin:.4rem
+}
+.Contact {
+    display:flex;
+    flex-direction:column;
+}
+.Navigationlinks {
+    display:flex;
+    flex-direction:column;
+}
