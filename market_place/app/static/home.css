@@ -5,3 +5,7 @@
 .sale-item {
     background-color: white;
 }
+
+.itemlisting-container:visited {
+    color:red;
+}
