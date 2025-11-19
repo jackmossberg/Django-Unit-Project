@@ -17,8 +17,15 @@
                 {{item.description}}
             </p>
         {% endif %}
-
-        <a href="#" class="sellercontact">Contact Seller</a>
+        {% if request.user == item.created_by %}
+            <div class="specify button">
+                <p>You made this item!</p><br>
+                <a href="{% url 'item:edit' item.id %}">Edit Item</a>
+                <a href="{% url 'item:delete' item.id %}">Delete Item</a>
+            </div>
+        {% else %}
+            <a href="#" class="sellercontact">Contact Seller</a>
+        {% endif %}
     </div>
 </div>
 <div class="rlcontainer">
