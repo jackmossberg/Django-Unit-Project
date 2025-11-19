@@ -13,7 +13,11 @@
 <body id="body"> 
 <div id='navbar'>
     <div id='searchbar'>
-        <input type='text' name='dbsearch' placeholder='Search'>
+        <form method="get" action="{% url 'app:search' %}">
+            <input type='text' name='query' value=""{{ query }} placeholder='Search'>
+
+            <button>Search</button>
+        </form>
     </div>
     <div id='options'>
         <button class='options-button'>Options</button>
@@ -58,12 +62,15 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> 
+    <a href="{% url 'item:browsing' %}">Browsing</a>
+
     {% if request.user.is_authenticated %}
         <div class='authenticated-nav-links'>
-            <a class='new-item-button' href="{% url 'item:new' %}">New Item</a>
-            <a class='unknown-button' href="#">Unknown2</a>
+            <a href="{% url 'item:new' %}">New Item</a>
+            <a href="{% url 'dashboard:createditems' %}">Created Items</a>
         </div>
+
     {% else %}
         <div class='navigation-buttons'>
             <a class='login-button' href="{% url 'app:login' %}">Login</a>

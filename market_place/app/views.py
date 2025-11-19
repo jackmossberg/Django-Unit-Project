@@ -4,6 +4,7 @@ from django.http.response import HttpResponse
 from .models import *
 from items.models import *
 from .forms import *
+from django.db.models import Q
 # Create your views here.
 def home(request:HttpRequest)-> HttpResponse:
     Unsolditems = Item.objects.filter(is_sold=False)
@@ -17,17 +18,6 @@ def home(request:HttpRequest)-> HttpResponse:
 def css_test_view(request: HttpRequest)-> HttpResponse:
     return render(request, 'home.html', {'my_model_instance': Item.objects.get(pk=1)})
 
-def category_view(request:HttpRequest)-> HttpResponse:
-    context = {
-        'categories':Category,
-        'items':Item,
-    }
-    return render(request,'category.html',context)
-
-def signin_view(request:HttpRequest)-> HttpResponse:
-   
-    return render(request,'signin.html')
-
 def signup_view(request:HttpRequest)-> HttpResponse:
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -38,16 +28,13 @@ def signup_view(request:HttpRequest)-> HttpResponse:
         form = SignupForm()
     return render(request,'app/signup.html', {'form':form})
 
-def cart_view(request:HttpRequest)-> HttpResponse:
-    context = {
-        'categories':Category,
-        'items':Item,
-    }
-    return render(request,'cart.html',context)
+def search(request):
+    query = request.GET.get('query', '')
+    category = Category.objects.all()
+    items = Item.objects.filter(is_sold=False)
 
-def paying_view(request:HttpRequest)-> HttpResponse:
-    context = {
-        'categories':Category,
-        'items':Item,
-    }
-    return render(request,'paying.html',context)
+    if query:
+        items = items.filter(Q(name__icontains=query) | Q(description__icontains=query))
+
+        return render(request, 'app/search.html', {'items':items , 'query':query, 'category':category
+        })
