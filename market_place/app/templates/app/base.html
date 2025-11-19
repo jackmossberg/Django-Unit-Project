@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'common.css' %}"> 
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'sign_up.css' %}">
     <script src="{% static 'common.js' %}"></script>
 </head>
 <body id="body"> 
@@ -54,8 +55,10 @@
         <a href="#">Unknown</a>
         <a href="#">Unknown2</a>
     {% else %}
-        <a href="{% url 'app:login' %}">Login</a>
-        <a href="{% url 'app:signup' %}">SignUp</a>
+        <div class='navigation-buttons'>
+            <a class='login-button' href="{% url 'app:login' %}">Login</a>
+            <a class='singup-button' href="{% url 'app:signup' %}">SignUp</a>
+        </div>
     {% endif %}
 </div>
     {% block content %} {% endblock content %}
@@ -71,7 +74,7 @@
         <h3 class="footertxthead">Contact Info</h3>
         <p class="footertxt">Phone Number: 662-327-459</p>
         <p class="footertxt">Email: fakestop@gmail.com</p>
-        <p class="footertxt">Address: Watervalley, MS</p>
+        <p class="footertxt">Address: Water Valley, MS</p>
     </div>
     <div class="Navigationlinks">
         <h3 class="footertxthead">Navigation Links</h3>

@@ -3,12 +3,12 @@
 {% block title %}Signup Page{% endblock %}
 {% block content %}
     <div class="container">
-    <h1>Sign Up</h1>
+    <h1 class='signuptxt'>Sign Up</h1>
     <form method="post" action=".">
         {% csrf_token %}
         <div class="Username">
             <label class="Usernametxt">Username</label><br>
-            {{form.name}}
+            {{ form.name }}
         </div>
         <div class="email">
             <label class="emailtxt">Email</label><br>
@@ -19,7 +19,8 @@
             {{ form.password1 }}
         </div>
         <div class="confirmpassword">
-            <label class="confirmpasswordtxt">Confirm password please</label><br>
+            <label class="confirmpasswordtxt">Confirm password</label><br>
+            {{ form.confirmpassword }}
         </div>
         {% if form.errors or form.non_field_errors %}
             <div class="SignupErrorField">
@@ -27,8 +28,9 @@
                     {{ form.errors }}
                 {% endfor %}
                 {{ form.non_field_errors }}
-        {% endif %}
             </div>
+        {% endif %}
+            
         <button class="submitbtn" type="submit">Submit</button>
     </form>
 </div>
