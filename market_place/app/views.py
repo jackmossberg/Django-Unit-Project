@@ -33,10 +33,10 @@ def signup_view(request:HttpRequest)-> HttpResponse:
         form = SignupForm(request.POST)
         if form.is_valid():
             form.save()
-
             return redirect('/login/')
-    form = SignupForm()
-    return render(request,'signup.html', {'form':form})
+    else:
+        form = SignupForm()
+    return render(request,'app/signup.html', {'form':form})
 
 def cart_view(request:HttpRequest)-> HttpResponse:
     context = {

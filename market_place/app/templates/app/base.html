@@ -50,6 +50,13 @@
             </ul>
         </div>
     </div>
+    {% if request.user.is_authenticated %}
+        <a href="#">Unknown</a>
+        <a href="#">Unknown2</a>
+    {% else %}
+        <a href="{% url 'app:login' %}">Login</a>
+        <a href="{% url 'app:signup' %}">SignUp</a>
+    {% endif %}
 </div>
     {% block content %} {% endblock content %}
 <footer class="footer">

@@ -1,26 +1,19 @@
 {% extends 'app/base.html' %}
 
-{% block title %}Signup Page{% endblock %}
+{% block title %}Login Page{% endblock %}
 {% block content %}
     <div class="container">
-    <h1>Sign Up</h1>
+    <h1>Login in </h1>
     <form method="post" action=".">
         {% csrf_token %}
         <div class="Username">
             <label class="Usernametxt">Username</label><br>
             {{form.name}}
-        </div>
-        <div class="email">
-            <label class="emailtxt">Email</label><br>
-            {{ form.email }}
-        </div>
+        </div>        
         <div class="password1">
             <label class="password1txt">Password</label><br>
-            {{ form.password1 }}
-        </div>
-        <div class="confirmpassword">
-            <label class="confirmpasswordtxt">Confirm password please</label><br>
-        </div>
+            {{ form.password }}
+        
         {% if form.errors or form.non_field_errors %}
             <div class="SignupErrorField">
                 {% for field in form %}
