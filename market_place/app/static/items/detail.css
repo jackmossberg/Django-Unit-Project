@@ -1,7 +1,55 @@
 .itemcontainer {
+    width:80%;
+    height:400px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
     color:white;
+    background-color:rgb(65, 65, 65);
+    margin:0 auto;
+    margin-top:150px;
+    border-radius:30px;
 }
 
 .sellercontact {
     color:green;
+}
+
+.itemimgcontainer {
+    margin-left:25px;
+}
+
+.infocontainer {
+    margin-left:50px;
+}
+
+.infotxt {
+    font-size:20px;
+}
+
+.infohead {
+    font-size:40px;
+}
+
+.itemimg,
+.rlimg {
+    border-radius:15px;
+
+}
+
+.rlheader {
+    color:white;
+    margin-top:150px;
+}
+
+.rl-links:visited {
+    color:red;
+}
+
+.rl-links {
+    color:white;
+}
+
+.rlcontainer {
+    height:150%;
 }

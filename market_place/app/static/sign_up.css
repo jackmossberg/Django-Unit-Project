@@ -45,17 +45,6 @@ input {
     height:15px;
 }
 
-.footer {
-    height:15%;
-    position:fixed;
-    bottom:0;
-}
-
-.navigation-buttons {
-    margin-top:15px;
-    margin-left:40px;
-}
-
 .singup-button {
     margin-left:10px;
 }

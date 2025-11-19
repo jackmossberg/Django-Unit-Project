@@ -6,6 +6,7 @@
     position: fixed;
     top: 0;
     width: 100vw;
+    height:10vh;
     background-color: rgb(219, 219, 219);
     padding: 0px;
     margin: 0px;
@@ -50,6 +51,10 @@
     align-items: center;
 }
 
+.options-button {
+    height: 20px;
+}
+
 .extra-contents {
     display: none;
     background-color: rgb(206, 206, 206);
@@ -88,4 +93,10 @@
 .Navigationlinks {
     display:flex;
     flex-direction:column;
+}
+
+.navigation-buttons,
+.authenticated-nav-links {
+    margin-top:15px;
+    margin-left:30px;
 }
