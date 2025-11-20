@@ -27,13 +27,13 @@
         {% endif %}
     </div>
 </div>
+<h2 class="rlheader">Related Items</h2>
 <div class="rlcontainer">
-    <h2 class="rlheader">Related Items</h2>
-    <div class="rlcontain">
-        {% for item in related_items %}
-            <div>
+    {% for item in related_items %}
+    <div class="rlcard">
+            <div class='card-content'>
                 <a class='rl-links' href="{% url 'item:detail' item.id %}">
-                    <div>
+                    <div class='itemimgcontainer'>
                         <img src="{{ item.image.url}}" class="rlimg">
                     </div>
                     <div class="rlinfocontainer">
@@ -45,7 +45,7 @@
                     </div>
                 </a>
             </div>
-        {% endfor %}    
     </div>
+    {% endfor %} 
 </div>
 {% endblock %}
