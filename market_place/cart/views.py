@@ -49,6 +49,10 @@ def checkout_cart(request):
 
     return redirect(checkout_session.url)
 
+def checkout_success(request):
+    CartItem.objects.filter(cart__user=request.user).delete()
+
+    return redirect('Cart:Home')
 
 def add_cart(request, pk):
     added_item = get_object_or_404(Item,pk=pk)
