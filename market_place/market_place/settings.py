@@ -1,4 +1,5 @@
 import os
+from decouple import config
 
 """
 Django settings for market_place project.
@@ -23,6 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-($bq*y$#jj&-otdx**&9*my_ccnggzm*4apv+t*a9%@$um$#v1'
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
     'app',
     'items',
     'dashboarditems',
+    'cart',
 ]
 
 MIDDLEWARE = [
