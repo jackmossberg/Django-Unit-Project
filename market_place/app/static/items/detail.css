@@ -2,7 +2,7 @@
     width:80%;
     height:400px;
     display:flex;
-    justify-content:flex-start;
+    justify-content:center;
     align-items:center;
     color:white;
     background-color:rgb(65, 65, 65);
@@ -31,15 +31,37 @@
     font-size:40px;
 }
 
-.itemimg,
-.rlimg {
+.itemimg {
     border-radius:15px;
-
+    width:20vw;
+    height:auto;
+    max-height:32vh;
 }
 
 .rlheader {
+    display:flex;
+    justify-content:center;
     color:white;
     margin-top:150px;
+    font-size:50px;
+}
+
+.rlcontainer {
+    display:flex;
+    justify-content:center;
+    gap:1.5rem;
+    flex-wrap:wrap;
+}
+
+.rlcard {
+    width: 25%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-content {
+    padding:1rem;
 }
 
 .rl-links:visited {
@@ -50,6 +72,8 @@
     color:white;
 }
 
-.rlcontainer {
-    height:150%;
+.rlimg {
+    border-radius:15px;
+    width:25vw;
+    height:25vh;
 }

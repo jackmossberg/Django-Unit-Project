@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'home.css' %}">
     <link rel="stylesheet" href="{% static 'sign_up.css' %}">
     <link rel="stylesheet" href="{% static 'items/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'new_item_page.css' %}">
     <script src="{% static 'common.js' %}"></script>
 </head>
 <body id="body"> 
@@ -16,7 +17,7 @@
         <form method="get" action="{% url 'app:search' %}">
             <input type='text' name='query' value=""{{ query }} placeholder='Search'>
 
-            <button>Search</button>
+            <button hidden>Search</button>
         </form>
     </div>
     <div id='options'>
@@ -63,7 +64,7 @@
             </ul>
         </div>
     </div> 
-    <a href="{% url 'item:browsing' %}">Browsing</a>
+    <a class='browsing-button' href="{% url 'item:browsing' %}">Browsing</a>
 
     {% if request.user.is_authenticated %}
         <div class='authenticated-nav-links'>

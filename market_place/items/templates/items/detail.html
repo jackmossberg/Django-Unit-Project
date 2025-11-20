@@ -8,33 +8,33 @@
         <img src="{{item.image.url}}" class="itemimg">
     </div>
 
-    <div class="infocontainer">
-        <h1 class="infohead">{{ item.name}}</h1>
-        <p class="infotxt"><strong>Price:</strong> ${{item.price}}</p>
-        <p class="infotxt"><strong>Seller:</strong> {{item.created_by}}</p>
-        {% if item.description %}
-            <p class="infotxt"><strong class="infoHead">Description:</strong><br>
-                 {{item.description}}
-            </p>
-        {% endif %}
-        {% if request.user == item.created_by %}
-            <div class="specify button">
-                <p>You made this item!</p><br>
-                <a href="{% url 'item:edit' item.id %}">Edit Item</a>
-                <a href="{% url 'item:delete' item.id %}">Delete Item</a>
-            </div>
-        {% else %}
-            <a href="#" class="sellercontact">Contact Seller</a>
-        {% endif %}
-    </div>
+        <div class="infocontainer">
+            <h1 class="infohead">{{ item.name}}</h1>
+            <p class="infotxt"><strong>Price:</strong> ${{item.price}}</p>
+            <p class="infotxt"><strong>Seller:</strong> {{item.created_by}}</p>
+            {% if item.description %}
+                <p class="infotxt"><strong class="infoHead">Description:</strong><br>
+                    {{item.description}}
+                </p>
+            {% endif %}
+            {% if request.user == item.created_by %}
+                <div class="specify button">
+                    <p>You made this item!</p><br>
+                    <a href="{% url 'item:edit' item.id %}">Edit Item</a>
+                    <a href="{% url 'item:delete' item.id %}">Delete Item</a>
+                </div>
+            {% else %}
+                <a href="#" class="sellercontact">Contact Seller</a>
+            {% endif %}
+        </div>
 </div>
+<h2 class="rlheader">Related Items</h2>
 <div class="rlcontainer">
-    <h2 class="rlheader">Related Items</h2>
-    <div class="rlcontain">
-        {% for item in related_items %}
-            <div>
+    {% for item in related_items %}
+    <div class="rlcard">
+            <div class='card-content'>
                 <a class='rl-links' href="{% url 'item:detail' item.id %}">
-                    <div>
+                    <div class='itemimgcontainer'>
                         <img src="{{ item.image.url}}" class="rlimg">
                     </div>
                     <div class="rlinfocontainer">
@@ -43,7 +43,7 @@
                     </div>
                 </a>
             </div>
-        {% endfor %}    
     </div>
+    {% endfor %} 
 </div>
 {% endblock %}

@@ -1,3 +1,46 @@
-.category-label {
+.new-item-card {
+    display:flex;
+    flex-direction:column;
+    background-color:rgb(65, 65, 65);
+    margin:0 auto;
+    margin-top:290px;
+    height:420px;
+    width:67%;
     color:white;
+}
+
+.new-item-text {
+    margin:0 auto;
+    font-size:50px;
+}
+
+.new-item-div {
+    display:grid;
+    grid-template-columns:150px 1fr;
+    column-gap:30px;
+    row-gap:20px;
+    width:60%;
+    margin:0 auto;
+    margin-top:15px;
+    align-items:center;
+}
+
+.new-item-div input,
+.new-item-div textarea,
+.new-item-div select {
+    width: 67%;
+}
+
+.new-item-div > div {
+    display:contents
+}
+
+.new-item-div label {
+    justify-self:end;
+    font-size:18px;
+}
+
+.form-submit-btn {
+    margin-top:15px;
+    transform: scale(1.5);
 }
