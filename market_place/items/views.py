@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Item
+from .models import Item, Category
 from .forms import NewItemForm, EditItemForm
 # Create your views here.
 def detail(request,pk):
@@ -47,8 +47,10 @@ def edit(request,pk):
     })
 
 def browsing(request):
+    categories = Category.objects.all()
     items = Item.objects.filter(is_sold=False)
 
     return render(request,'items/browsing.html', {
+        'categories':categories,
         'items':items
     })

@@ -43,8 +43,8 @@ def checkout_cart(request):
             'user_email': request.user.email
         },
         mode='payment',
-        success_url=MY_DOMAIN + '/payment-success/',
-        cancel_url=MY_DOMAIN + '/cart/',
+        success_url='http://127.0.0.1:8000/cart/payment-success/',
+        cancel_url='http://127.0.0.1:8000/cart/',
     )
 
     return redirect(checkout_session.url)
@@ -63,13 +63,17 @@ def add_cart(request, pk):
         cart_item.save()
     else:
         cart_item.save()
-    return redirect("Cart:Home")
+    return redirect('app:home')
 
 def delete_cart(request, pk):
     cart = get_object_or_404(Cart, user=request.user)
 
     cart_item = get_object_or_404(CartItem, cart=cart, item_id=pk)
-    cart_item.delete()
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
     return redirect("Cart:Home")
 @login_required
 def cart(request):

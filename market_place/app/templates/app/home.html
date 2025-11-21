@@ -1,30 +1,48 @@
 {% extends "app/base.html" %}
 {% block content %}
-<div id='container'>
-    <div id='itemlisting-container'>
-        <ul>
-            {% for item in items %}
-                <div>
-                    <a class='items-link-class' href="{% url 'item:detail' item.id %}">
-                        <div>
-                            <img class='home-item-img' src="{{ item.image.url}}" class="rounded-t-xl">
-                        </div>
-                        <div class="p-6 bg-white rounded-b-xl">
-                            <h2 class="text-2xl">{{ item.name }}</h2>
-                            <p class="text-gray-500">Price : {{item.price }}</p>
+
+<div id="container">
+
+    {% for category in categories %}
+    <div class="category-section">
+
+        <h2 class="category-title">{{ category.name }}</h2>
+
+        <div class="items-grid">
+
+            {% for item in category.items.all %}
+                <div class="item-card">
+
+                    <a class="items-link-class" href="{% url 'item:detail' item.id %}">
+                        <img class="home-item-img" src="{{ item.image.url }}" alt="{{ item.name }}">
+                        <div class="card-info">
+                            <h3 class="text-2xl">{{ item.name }}</h3>
+                            <p class="text-gray-500">Price: ${{ item.price }}</p>
                         </div>
                     </a>
+
                     <div class="purchase">
-                        <a href="{% url 'app:checkout' item.id %}"><button>Purchase</button></a>
+                        <a href="{% url 'app:checkout' item.id %}">
+                            <button>Purchase</button>
+                        </a>
                     </div>
+
                     <div class="cartadd">
-                        <a href="{% url 'Cart:add' item.id %}"><button>Add to cart </button></a>
+                        <a href="{% url 'Cart:add' item.id %}">
+                            <button>Add to cart</button>
+                        </a>
                     </div>
+
                 </div>
             {% empty %}
-                <li>None found</li>
+                <p>No items in this category.</p>
             {% endfor %}
-        </ul>
+
+        </div>
+
     </div>
+    {% endfor %}
+
 </div>
+
 {% endblock content %}
