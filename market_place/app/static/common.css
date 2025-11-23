@@ -21,7 +21,7 @@
     border-radius: 5px;
 }
 .searchbarsizing {
-    width: 50vw;
+    width: 40vw;
 }
 #searchbar {
     margin-top: 15px;
@@ -112,10 +112,12 @@
 .addbtn,
 .browsebtn,
 .signbtn,
-.cartbtn {
+.cartbtn,
+.logoutbtn {
     border-radius:1.25rem;
-    width:7rem;
-    height:2rem;
+    width:6.5rem;
+    height:2.2rem;
     font-size:.8rem;
+    margin-left: .4rem;
 
 }

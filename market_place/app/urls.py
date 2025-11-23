@@ -5,6 +5,7 @@ from . import views
 
 app_name='app'
 urlpatterns = [
+    path('logout/', views.Log_out, name='logout'),
     path('checkout/<int:pk>/', views.CheckoutView, name='checkout'),
     path('',views.home, name='home' ),
     path('search/',views.search, name='search'),

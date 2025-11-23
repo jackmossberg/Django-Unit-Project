@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'sign_up.css' %}">
     <link rel="stylesheet" href="{% static 'items/detail.css' %}">
     <link rel="stylesheet" href="{% static 'new_item_page.css' %}">
+    <link rel="stylesheet" href="{% static 'cart_page.css' %}">
     <script src="{% static 'common.js' %}"></script>
 </head>
 <body id="body"> 
@@ -71,6 +72,7 @@
             <a href="{% url 'item:new' %}"><button class="addbtn">Add Item</button></a>
             <a href="{% url 'dashboard:createditems' %}"><button class="createbtn">Created Items</button></a>
             <a href="{% url 'Cart:Home' %}"><button class="cartbtn">Cart</button></a>
+            <a href="{% url 'app:logout' %}"><button class="logoutbtn">Logout</button></a>
         </div>
 
     {% else %}

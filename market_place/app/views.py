@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from .models import *
@@ -42,7 +43,9 @@ def CheckoutView(request, pk):
     )
     return redirect(checkout_session.url)
 
-
+def Log_out(request):
+    logout(request)
+    return redirect('/login/')
 
 def home(request:HttpRequest)-> HttpResponse:
     Unsolditems = Item.objects.filter(is_sold=False)
