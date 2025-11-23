@@ -25,7 +25,7 @@
             {% endfor %}
         </table> <!--cart-table-->
 
-        <h3 class'cart-total-text'>Total: ${{ total }}</h3>
+        <h3 class='cart-total-text'>Total: ${{ total }}</h3>
         <a class='checkout-cart-button' href="{% url 'Cart:checkout_cart' %}"><button>Checkout Cart</button></a>
 
         {% else %}
