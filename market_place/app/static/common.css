@@ -18,21 +18,21 @@
     display: flex; 
     overflow: hidden;
     z-index: 1000;
-    border-radius: 5px;
+    border-radius: 0.313rem;
 }
 .searchbarsizing {
     width: 40vw;
 }
 #searchbar {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 15px;
+    margin-top: 0.938rem;
+    margin-bottom: 0.938rem;
+    margin-left: 0.938rem;
 }
 
 #options {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 2px;
+    margin-top: 0.938rem;
+    margin-bottom: 0.938rem;
+    margin-left: 0.125rem;
     display: flex;
 }
 
@@ -54,18 +54,18 @@
 }
 
 .options-list-e {
-    margin-left: 20px;
+    margin-left: 1.25rem;
     align-items: center;
 }
 
 .options-button {
-    height: 20px;
+    height: 2.222vh;
 }
 
 .extra-contents {
     display: none;
     background-color: rgb(206, 206, 206);
-    margin-top: 5px;
+    margin-top: 0.313rem;
 }
 
 .options-list-e:hover .extra-contents {
@@ -104,8 +104,8 @@
 .navigation-buttons,
 .authenticated-nav-links,
 .browsing-button {
-    margin-top:15px;
-    margin-left:30px;
+    margin-top:0.938rem;
+    margin-left:1.875;
 }
 .logbtn,
 .createbtn,
@@ -115,8 +115,8 @@
 .cartbtn,
 .logoutbtn {
     border-radius:1.25rem;
-    width:6.5rem;
-    height:2.2rem;
+    width:7.222vw;
+    height:2.444vh;
     font-size:.8rem;
     margin-left: .4rem;
 

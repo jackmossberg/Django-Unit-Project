@@ -15,22 +15,22 @@ body {
     justify-content:center;
     align-items:center;
     width:50%;
-    margin:220px auto;
+    margin:13.75rem auto;
     color:white;
-    font-size:25px;
+    font-size:1.563rem;
     background-color:rgb(18, 18, 18);
-    padding:40px 0;
+    padding:2.5rem 0;
 }
 
 .signuptxt {
-    font-size: 60px;
-    margin-top:-20px;
+    font-size: 3.75rem;
+    margin-top:-1.25rem;
 }
 
 .email,
 .password1,
 .confirmpassword {
-    margin-top:20px;
+    margin-top:1.25rem;
 }
 
 form {
@@ -40,15 +40,15 @@ form {
 }
 
 .submitbtn {
-    margin-top:20px;
+    margin-top:1.25erm;
     transform: scale(1.5);
 }
 
 input {
-    width:200px;
-    height:15px;
+    width:12.5vw;
+    height:13.889vh;
 }
 
 .singup-button {
-    margin-left:10px;
+    margin-left:0.625;
 }

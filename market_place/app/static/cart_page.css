@@ -47,19 +47,19 @@
 }
 
 .your-cart-text {
-    font-size:50px;
+    font-size:3.125rem;
 }
 
 .cart-var-table,
 .cart-desc-table {
-    font-size:25px;
+    font-size:1.563rem;
     display:flex;
     gap:5vh;
     justify-content:center;
 }
 
 .cart-total-text {
-    font-size:20px;
+    font-size:1.25rem;
 }
 
 .cart-remove-button {
