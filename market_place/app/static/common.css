@@ -15,13 +15,14 @@
     background-color: rgb(219, 219, 219);
     padding: 0px;
     margin: 0px;
-    margin-left: 50px;
     display: flex; 
     overflow: hidden;
     z-index: 1000;
     border-radius: 5px;
 }
-
+.searchbarsizing {
+    width: 40vw;
+}
 #searchbar {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -49,6 +50,7 @@
     margin: 0px;
     padding: 0px;
     display: flex;
+    flex-direction:column;
 }
 
 .options-list-e {
@@ -104,4 +106,18 @@
 .browsing-button {
     margin-top:15px;
     margin-left:30px;
+}
+.logbtn,
+.createbtn,
+.addbtn,
+.browsebtn,
+.signbtn,
+.cartbtn,
+.logoutbtn {
+    border-radius:1.25rem;
+    width:6.5rem;
+    height:2.2rem;
+    font-size:.8rem;
+    margin-left: .4rem;
+
 }

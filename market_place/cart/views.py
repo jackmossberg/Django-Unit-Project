@@ -82,6 +82,7 @@ def cart(request):
      items = cart.items.all()
 
      total = cart.total()
+     total = round(total,2)
 
      return render(request,"cart/cart.html", {
          "cart":cart,
