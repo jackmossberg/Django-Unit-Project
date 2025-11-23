@@ -15,7 +15,7 @@
 <div id='navbar'>
     <div id='searchbar'>
         <form method="get" action="{% url 'app:search' %}">
-            <input type='text' name='query' value=""{{ query }} placeholder='Search'>
+            <input type='text' name='query' class="searchbarsizing" value=""{{ query }} placeholder='Search'>
 
             <button hidden>Search</button>
         </form>
@@ -64,19 +64,19 @@
             </ul>
         </div>
     </div> 
-    <a class='browsing-button' href="{% url 'item:browsing' %}">Browsing</a>
+    <a class='browsing-button' href="{% url 'item:browsing' %}"><button class="browsebtn">Browse</button></a>
 
     {% if request.user.is_authenticated %}
         <div class='authenticated-nav-links'>
-            <a href="{% url 'item:new' %}">New Item</a>
-            <a href="{% url 'dashboard:createditems' %}">Created Items</a>
-            <a href="{% url 'Cart:Home' %}">Cart</a>
+            <a href="{% url 'item:new' %}"><button class="addbtn">Add Item</button></a>
+            <a href="{% url 'dashboard:createditems' %}"><button class="createbtn">Created Items</button></a>
+            <a href="{% url 'Cart:Home' %}"><button class="cartbtn">Cart</button></a>
         </div>
 
     {% else %}
         <div class='navigation-buttons'>
-            <a class='login-button' href="{% url 'app:login' %}">Login</a>
-            <a class='singup-button' href="{% url 'app:signup' %}">SignUp</a>
+            <a class='login-button' href="{% url 'app:login' %}"><button class="logbtn">Login</button></a>
+            <a class='singup-button' href="{% url 'app:signup' %}"><button class="signbtn">Sign Up</button></a>
         </div>
     {% endif %}
 </div>
