@@ -3,12 +3,14 @@ from django.contrib.auth.decorators import login_required
 from .models import Item, Category
 from .forms import NewItemForm, EditItemForm
 # Create your views here.
+
 def detail(request,pk):
     #will return what item matches the id number
     #  or give not found error if none
     item = get_object_or_404(Item,pk=pk)
     similaritems = Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
     return render(request, 'items/detail.html',{'item':item,'related_items':similaritems})
+
 @login_required
 def new(request):
     if request.method == "POST": 
@@ -50,7 +52,16 @@ def browsing(request):
     categories = Category.objects.all()
     items = Item.objects.filter(is_sold=False)
 
+    cat_id = request.GET.get('category')
+    if cat_id:
+        items = items.filter(category__id=cat_id)
+    
+    selected_category = None
+    if cat_id:
+        selected_category = Category.objects.get(id=cat_id)
+
     return render(request,'items/browsing.html', {
         'categories':categories,
-        'items':items
+        'items':items, 
+        'selected_category':selected_category
     })
