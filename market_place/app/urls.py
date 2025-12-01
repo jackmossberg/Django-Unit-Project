@@ -6,7 +6,7 @@ from items import views as item_views
 
 app_name='app'
 urlpatterns = [
-    path('logout/', views.signup_view, name='logout'),
+    path('logout/', views.Log_out, name='logout'),
     path('checkout/<int:pk>/', views.CheckoutView, name='checkout'),
     path('search/',views.search, name='search'),
     path('signup/', views.signup_view, name='signup'),

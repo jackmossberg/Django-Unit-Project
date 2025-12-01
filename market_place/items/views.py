@@ -15,7 +15,7 @@ def new(request):
         form = NewItemForm(request.POST, request.FILES)
         if form.is_valid():
             item = form.save(commit=False)
-            item.created_by = request.use
+            item.created_by = request.user
             item.save() 
             return redirect('item:detail',pk=item.id)
     else:

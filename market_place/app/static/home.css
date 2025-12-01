@@ -9,6 +9,7 @@
     color:white;
     font-size: 4rem;
     margin-top: 15vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .items-grid {
@@ -20,7 +21,7 @@
 }
 
 .item-card {
-    background:white;
+    background-color: rgb(75, 75, 75);
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: 0 .25rem .625rem rgba(0,0,0,0.25);

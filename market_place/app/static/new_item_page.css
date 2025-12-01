@@ -6,6 +6,8 @@
     margin-top:18.125;
     height:46.667vh;
     width:67%;
+    justify-content: center;
+    min-height: 80vh;
     color:white;
 }
 
@@ -26,9 +28,14 @@
 }
 
 .new-item-div input,
-.new-item-div textarea,
 .new-item-div select {
     width: 67%;
+    height: 20px;
+}
+
+.new-item-div textarea {
+    width: 67%;
+    height: 50px;
 }
 
 .new-item-div > div {
