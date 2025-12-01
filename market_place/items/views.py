@@ -5,8 +5,6 @@ from .forms import NewItemForm, EditItemForm
 # Create your views here.
 
 def detail(request,pk):
-    #will return what item matches the id number
-    #  or give not found error if none
     item = get_object_or_404(Item,pk=pk)
     similaritems = Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
     return render(request, 'items/detail.html',{'item':item,'related_items':similaritems})
@@ -17,7 +15,7 @@ def new(request):
         form = NewItemForm(request.POST, request.FILES)
         if form.is_valid():
             item = form.save(commit=False)
-            item.created_by = request.user
+            item.created_by = request.use
             item.save() 
             return redirect('item:detail',pk=item.id)
     else:
@@ -49,19 +47,23 @@ def edit(request,pk):
     })
 
 def browsing(request):
-    categories = Category.objects.all()
-    items = Item.objects.filter(is_sold=False)
+    items_queryset = Item.objects.filter(is_sold=False)
+    cat_id = request.GET.get('category')  
 
-    cat_id = request.GET.get('category')
-    if cat_id:
-        items = items.filter(category__id=cat_id)
-    
-    selected_category = None
-    if cat_id:
-        selected_category = Category.objects.get(id=cat_id)
+    view_selected_category = None
+    all_categories = Category.objects.all()
 
-    return render(request,'items/browsing.html', {
-        'categories':categories,
-        'items':items, 
-        'selected_category':selected_category
-    })
+    if cat_id:
+        items_queryset = items_queryset.filter(category_id=cat_id)
+        view_selected_category = Category.objects.filter(id=cat_id).first()
+
+    context = {
+        'filtered_items': items_queryset,
+        'view_selected_category': view_selected_category,
+        'all_categories': all_categories,
+
+        'global_categories': all_categories,
+        'global_selected_category': view_selected_category,
+    }
+
+    return render(request, 'app/home.html', context)
