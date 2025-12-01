@@ -10,10 +10,15 @@
     <link rel="stylesheet" href="{% static 'items/detail.css' %}">
     <link rel="stylesheet" href="{% static 'new_item_page.css' %}">
     <link rel="stylesheet" href="{% static 'cart_page.css' %}">
+    <link rel="stylesheet" href="{% static 'created_items.css' %}">
     <script src="{% static 'common.js' %}"></script>
 </head>
 <body id="body"> 
 <div id='navbar'>
+    <div class="TV-logo-container">
+        <img src="{% static 'images/truevalue_market_720.png' %}" alt="logo"></img>
+    </div>
+
     <div id='searchbar'>
         <form method="get" action="{% url 'app:search' %}">
             <input type='text' name='query' class="searchbarsizing" value=""{{ query }} placeholder='Search'>
@@ -23,16 +28,12 @@
     </div>
 
     <div id="category-filter">
-        <form method="get" action="{% url 'item:browsing' %}">
-            {% if request.GET.query %}
-                <input type="hidden" name="query" value="{{ request.GET.query }}">
-            {% endif %}
-
+        <form method="get" action="{% url 'home' %}">
             <select name="category" onchange="this.form.submit()">
                 <option value="">All Categories</option>
-                {% for category in categories %}
+                {% for category in global_categories %}
                     <option value="{{ category.id }}"
-                        {% if selected_category and selected_category.id == category.id %}selected{% endif %}>
+                        {% if global_selected_category and global_selected_category.id == category.id %}selected{% endif %}>
                         {{ category.name }}
                     </option>
                 {% endfor %}
@@ -44,8 +45,8 @@
 
     {% if request.user.is_authenticated %}
         <div class='authenticated-nav-links'>
-            <a href="{% url 'item:new' %}"><button class="addbtn">Add Item</button></a>
-            <a href="{% url 'dashboard:createditems' %}"><button class="createbtn">Created Items</button></a>
+            <a href="{% url 'item:new' %}"><button class="addbtn">List Item</button></a>
+            <a href="{% url 'dashboard:createditems' %}"><button class="createbtn">Item Listing</button></a>
             <a href="{% url 'Cart:Home' %}"><button class="cartbtn">Cart</button></a>
             <a href="{% url 'app:logout' %}"><button class="logoutbtn">Logout</button></a>
         </div>

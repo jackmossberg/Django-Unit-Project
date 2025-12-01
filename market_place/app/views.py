@@ -45,7 +45,7 @@ def CheckoutView(request, pk):
 
 def Log_out(request):
     logout(request)
-    return redirect('/login/')
+    return redirect('/app/login/')
 
 def home(request:HttpRequest)-> HttpResponse:
     Unsolditems = Item.objects.filter(is_sold=False)

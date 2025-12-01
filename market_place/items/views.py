@@ -49,19 +49,23 @@ def edit(request,pk):
     })
 
 def browsing(request):
-    categories = Category.objects.all()
-    items = Item.objects.filter(is_sold=False)
+    items_queryset = Item.objects.filter(is_sold=False)
+    cat_id = request.GET.get('category')  
 
-    cat_id = request.GET.get('category')
-    if cat_id:
-        items = items.filter(category__id=cat_id)
-    
-    selected_category = None
-    if cat_id:
-        selected_category = Category.objects.get(id=cat_id)
+    view_selected_category = None
+    all_categories = Category.objects.all()
 
-    return render(request,'items/browsing.html', {
-        'categories':categories,
-        'items':items, 
-        'selected_category':selected_category
-    })
+    if cat_id:
+        items_queryset = items_queryset.filter(category_id=cat_id)
+        view_selected_category = Category.objects.filter(id=cat_id).first()
+
+    context = {
+        'filtered_items': items_queryset,
+        'view_selected_category': view_selected_category,
+        'all_categories': all_categories,
+
+        'global_categories': all_categories,
+        'global_selected_category': view_selected_category,
+    }
+
+    return render(request, 'app/home.html', context)

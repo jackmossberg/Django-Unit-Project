@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class="title">{{ title }}</h1>
 <div class='new-item-card'>
-    <h1 class='new-item-text'>New Item</h1>
+    <h1 class='new-item-text'>List Item</h1>
     <form method="post" action="." enctype="multipart/form-data" class='new-item-forms'>
         {% csrf_token %}
 
@@ -18,16 +18,16 @@
                 {{ form.name }}
             </div>
 
-            <div class='description-form'>
-                <label class='description-label'>Description</label>
-                {{ form.description }}
-            </div>
-
             <div class='price-form'>
                 <label class='price-label'>Price</label>
                 {{ form.price }}
             </div>
 
+            <div class='description-form'>
+                <label class='description-label'>Description</label>
+                {{ form.description }}
+            </div>
+            
             <div class='image-form'>
                 <label class='image-label'>Image</label>
                 {{ form.image }}

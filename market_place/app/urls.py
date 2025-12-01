@@ -2,6 +2,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from .forms import LoginForm
 from . import views
+from items import views as item_views
 
 app_name='app'
 urlpatterns = [
