@@ -11,29 +11,34 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    height:10vh;
+    height:65px;
     background-color: rgb(219, 219, 219);
     padding: 0px;
     margin: 0px;
     display: flex; 
-    overflow: hidden;
+    overflow:visible;
     z-index: 1000;
-    border-radius: 5px;
+    border-radius: 0.313rem;
 }
+
 .searchbarsizing {
-    width: 40vw;
+    width: 24vw;
+    height: 25px;
 }
+
 #searchbar {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 15px;
+    margin-top: 0.938rem; 
+    margin-bottom: 0.938rem;
+    margin-left: 1.875rem;
 }
 
 #options {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 2px;
+    margin-top: 0.938rem; 
+    margin-bottom: 0.938rem;
     display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    transform: translateX(-25px);
 }
 
 #options-dropdown {
@@ -50,22 +55,23 @@
     margin: 0px;
     padding: 0px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .options-list-e {
-    margin-left: 20px;
+    margin-left: 1.25rem;
     align-items: center;
+    padding: 10px;
 }
 
 .options-button {
-    height: 20px;
+    height: 30.6px;
 }
 
 .extra-contents {
     display: none;
     background-color: rgb(206, 206, 206);
-    margin-top: 5px;
+    margin-top: 0.313rem;
 }
 
 .options-list-e:hover .extra-contents {
@@ -104,8 +110,8 @@
 .navigation-buttons,
 .authenticated-nav-links,
 .browsing-button {
-    margin-top:15px;
-    margin-left:30px;
+    margin-top:0.938rem;
+    margin-left:1.875;
 }
 .logbtn,
 .createbtn,
@@ -114,10 +120,18 @@
 .signbtn,
 .cartbtn,
 .logoutbtn {
-    border-radius:1.25rem;
-    width:6.5rem;
-    height:2.2rem;
+    /*border-radius:1.25rem;*/
+    width: 120px;
+    height:30.6px;
     font-size:.8rem;
-    margin-left: .4rem;
+    margin-left: 18px;
+}
 
+#category-filter select {
+    width:7.222vw;
+    height:30.6px;
+    font-size:.8rem;
+    margin-left: 0px;
+    margin-right: 2rem;
+    margin-top:0.938rem;
 }

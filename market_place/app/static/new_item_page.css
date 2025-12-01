@@ -3,25 +3,25 @@
     flex-direction:column;
     background-color:rgb(65, 65, 65);
     margin:0 auto;
-    margin-top:290px;
-    height:420px;
+    margin-top:18.125;
+    height:46.667vh;
     width:67%;
     color:white;
 }
 
 .new-item-text {
     margin:0 auto;
-    font-size:50px;
+    font-size:3.125rem;
 }
 
 .new-item-div {
     display:grid;
-    grid-template-columns:150px 1fr;
-    column-gap:30px;
-    row-gap:20px;
+    grid-template-columns:9.375rem 1fr;
+    column-gap:1.875rem;
+    row-gap:1.25rem;
     width:60%;
     margin:0 auto;
-    margin-top:15px;
+    margin-top:0.938rem;
     align-items:center;
 }
 
@@ -37,10 +37,11 @@
 
 .new-item-div label {
     justify-self:end;
-    font-size:18px;
+    font-size:1.125rem;
+    
 }
 
 .form-submit-btn {
-    margin-top:15px;
+    margin-top:0.938rem;
     transform: scale(1.5);
 }
