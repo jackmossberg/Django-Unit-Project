@@ -66,7 +66,7 @@ def add_cart(request, pk):
         cart_item.save()
     else:
         cart_item.save()
-    return redirect('app:home')
+    return redirect('item:browsing')
 
 @login_required
 def delete_cart(request, pk):

@@ -1,6 +1,21 @@
 
+.TV-logo-container {
+    margin: 4px;
+    background-color: rgb(252, 252, 252);
+    margin-right: 12vh;
+    border-radius: 7px;
+}
+
+.TV-logo-container img {
+    width: 110px;
+    transform: translate(0px, -25px);
+}
+
 .category-section {
     margin-bottom: 3.125rem;
+    background-color: rgb(32, 32, 32);
+    margin: 50px;
+    border-radius: 15px;
 }
 
 .category-title {
@@ -54,7 +69,7 @@
 }
 
 .cartadd button {
-    background: #007bff
+    background: #002f79
 }
 
 .no-items-p-tag {

@@ -18,6 +18,7 @@
             </p>
         {% endif %}
         <a href="{% url 'app:checkout' item.id %}"><button class="purchase">Purchase</button></a>
+        <a href="{% url 'Cart:add' item.id %}"><button class="purchase">Add to Cart</button></a>
         {% if request.user == item.created_by %}
             <div class="specify button">
                 <a href="{% url 'item:edit' item.id %}">Edit Item</a>

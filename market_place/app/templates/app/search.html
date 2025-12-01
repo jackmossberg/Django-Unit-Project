@@ -1,21 +1,22 @@
 {% extends "app/base.html" %}
 {% block content %}
 <div id='container'>
-    <div id='itemlisting-container'>
+    <div id='itemlisting-container-c-items'>
         <ul>
             {% for item in items %}
-                <div>
+                <div class="item-card-c">
                     <a href="{% url 'item:detail' item.id %}">
                         <div>
                             <img src="{{ item.image.url}}" class="rounded-t-xl">
                         </div>
-                        <div class="p-6 bg-white rounded-b-xl">
+                        <div class="p-6 bg-white-rounded-b-xl">
                             <h2 class="text-2xl">{{ item.name }}</h2>
                             <p class="text-gray-500">Price : {{item.price }}</p>
                         </div>
                     </a>
                     <div class="purchase">
                         <a href="{% url 'app:checkout' item.id %}"><button>Purchase</button></a>
+                        <a href="{% url 'Cart:add' item.id %}"><button>Add to cart</button></a>
                     </div>
                 </div>
             {% empty %}

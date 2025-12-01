@@ -1,22 +1,25 @@
 .new-item-card {
+    width:60%;
+    height:440px;
+    margin:0 auto;
+    margin-top:30vh;
+    background-color: rgb(32, 32, 32);
+    border-radius: 15px;
     display:flex;
     flex-direction:column;
-    background-color:rgb(65, 65, 65);
-    margin:0 auto;
-    margin-top:18.125;
-    height:46.667vh;
-    width:67%;
-    justify-content: center;
-    min-height: 80vh;
-    color:white;
+    justify-content:center;
 }
 
 .new-item-text {
     margin:0 auto;
     font-size:3.125rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
 }
 
 .new-item-div {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
     display:grid;
     grid-template-columns:9.375rem 1fr;
     column-gap:1.875rem;
