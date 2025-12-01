@@ -1,6 +1,7 @@
 .cart-entire-page {
     overflow:hidden;
     color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .cart-page-card {
@@ -8,7 +9,8 @@
     height:auto;
     margin:0 auto;
     margin-top:30vh;
-    background-color:rgb(18, 18, 18);
+    background-color: rgb(32, 32, 32);
+    border-radius: 15px;
     display:flex;
     flex-direction:column;
     justify-content:center;

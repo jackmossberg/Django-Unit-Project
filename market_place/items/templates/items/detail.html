@@ -17,12 +17,12 @@
                  {{item.description}}
             </p>
         {% endif %}
+        <a href="{% url 'app:checkout' item.id %}"><button class="purchase">Purchase</button></a>
+        <a href="{% url 'Cart:add' item.id %}"><button class="purchase">Add to Cart</button></a>
         {% if request.user == item.created_by %}
             <div class="specify button">
-                <p>You made this item!</p><br>
                 <a href="{% url 'item:edit' item.id %}">Edit Item</a>
                 <a href="{% url 'item:delete' item.id %}">Delete Item</a>
-                <a href="{% url 'app:checkout' item.id %}"><button>Purchase</button></a>
             </div>
         {% endif %}
     </div>

@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow:hidden;
     display:flex;
     flex-direction:column;
@@ -18,7 +19,8 @@ body {
     margin:13.75rem auto;
     color:white;
     font-size:1.563rem;
-    background-color:rgb(18, 18, 18);
+    background-color: rgb(32, 32, 32);
+    border-radius: 15px;
     padding:2.5rem 0;
 }
 
@@ -37,7 +39,7 @@ body {
     width: 20rem;     box-sizing: border-box;
     border: 1px solid #333;
     background-color: #eaeaea;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .Username,

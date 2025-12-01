@@ -1,6 +1,6 @@
- a { /* Can and likely will change. Only turned red as its hard to see
+a { /* Can and likely will change. Only turned red as its hard to see
     the links in purple.  */
-    color:red;
+    color:rgb(196, 221, 255);
 }
 
 #body {

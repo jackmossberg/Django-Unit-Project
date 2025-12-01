@@ -85,6 +85,8 @@ STATICFILES_DIRS = [
 
 WSGI_APPLICATION = 'market_place.wsgi.application'
 
+LOGIN_URL = '/app/login/'
+
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -130,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 MEDIA_URL ='media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 

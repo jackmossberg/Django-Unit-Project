@@ -1,6 +1,21 @@
 
+.TV-logo-container {
+    margin: 4px;
+    background-color: rgb(252, 252, 252);
+    margin-right: 12vh;
+    border-radius: 7px;
+}
+
+.TV-logo-container img {
+    width: 110px;
+    transform: translate(0px, -25px);
+}
+
 .category-section {
     margin-bottom: 3.125rem;
+    background-color: rgb(32, 32, 32);
+    margin: 50px;
+    border-radius: 15px;
 }
 
 .category-title {
@@ -9,6 +24,7 @@
     color:white;
     font-size: 4rem;
     margin-top: 15vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .items-grid {
@@ -20,9 +36,9 @@
 }
 
 .item-card {
-    background:white;
+    background-color: rgb(75, 75, 75);
     border-radius: 0.75rem;
-    overflow: hidden;
+    overflow:auto;
     box-shadow: 0 .25rem .625rem rgba(0,0,0,0.25);
     padding-bottom: .625rem;
     text-align:center;
@@ -39,7 +55,7 @@
 }
 
 .purchase button, .cartadd button {
-    width:20vw;
+    width:15vw !important;
     margin-top: .625rem;
     padding: .5rem;
     border-radius: .375rem;
@@ -53,7 +69,7 @@
 }
 
 .cartadd button {
-    background: #007bff
+    background: #002f79
 }
 
 .no-items-p-tag {
