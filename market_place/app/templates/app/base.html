@@ -26,41 +26,7 @@
         <div id='options-dropdown'>
             <ul id='options-list'>
                 <li class='options-list-e'>
-                    <button>Legal Matters</button>
-                    <div class='extra-contents'>
-                        <p class="footertxt">Privacy Policy</p>
-                        <p class="footertxt">Terms of Service</p>
-                        <p class="footertxt">Cookie Settings</p>
-                        <p class="footertxt">Return/Refund Policies</p>
-                    </div>
-                </li>
-                <li class='options-list-e'>
-                    <button>Contact</button>
-                    <div class='extra-contents'>
-                        <p class="footertxt">Phone Number: 662-327-459</p>
-                        <p class="footertxt">Email: fakestop@gmail.com</p>
-                        <p class="footertxt">Address: Water Valley, MS</p>
-                    </div>
-                </li>
-                <li class='options-list-e'>
-                    <button>Navigation Links</button>
-                    <div class='extra-contents'>
-                        <p class="footertxt">About Us</p>
-                        <p class="footertxt">FAQ</p>
-                        <p class="footertxt">Customer Service</p>
-                    </div>
-                </li>
-                <li class='options-list-e'>
-                    <button>button-4</button>
-                    <div class='extra-contents'>
-                        dropdown placeholder
-                    </div>
-                </li>
-                <li class='options-list-e'>
-                    <button>button-5</button>
-                    <div class='extra-contents'>
-                        dropdown placeholder
-                    </div>
+                    <a href="{% url 'app:category' category.id %}"><button>{{ category.</button></a>
                 </li>
             </ul>
         </div>
