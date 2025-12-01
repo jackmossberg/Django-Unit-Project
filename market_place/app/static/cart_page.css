@@ -9,7 +9,7 @@
     height:auto;
     margin:0 auto;
     margin-top:30vh;
-    background-color: rgb(32, 32, 32);
+    background-color: #abaaaa;
     border-radius: 15px;
     display:flex;
     flex-direction:column;
@@ -50,6 +50,12 @@
 
 .your-cart-text {
     font-size:3.125rem;
+    background-color: black;
+    border-bottom: solid .420rem;
+    width:100%;
+    text-align: center;
+    margin-top:-.5rem;
+    border-radius:15px;
 }
 
 .cart-var-table,

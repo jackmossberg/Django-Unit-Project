@@ -1,9 +1,10 @@
+
 .new-item-card {
     width:60%;
     height:440px;
     margin:0 auto;
-    margin-top:30vh;
-    background-color: rgb(32, 32, 32);
+    margin-top:27.5vh;
+    background-color: #8e8e8e;
     border-radius: 15px;
     display:flex;
     flex-direction:column;
@@ -15,11 +16,17 @@
     font-size:3.125rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
+    margin-top:-4rem;
+    background-color: black;
+    border-bottom: solid .420rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom:2.5rem;
 }
 
 .new-item-div {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
+    color: rgb(255, 255, 255);
     display:grid;
     grid-template-columns:9.375rem 1fr;
     column-gap:1.875rem;

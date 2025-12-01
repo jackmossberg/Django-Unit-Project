@@ -1,10 +1,10 @@
-a { /* Can and likely will change. Only turned red as its hard to see
-    the links in purple.  */
-    color:rgb(196, 221, 255);
+a {
+    color:#000000;
 }
 
 #body {
-    background-color: rgb(49, 48, 48);
+    background-color:#2b2b2b;
+    text-decoration: none !important;
 }
 
 #navbar {
@@ -12,7 +12,8 @@ a { /* Can and likely will change. Only turned red as its hard to see
     top: 0;
     width: 100vw;
     height:65px;
-    background-color: rgb(219, 219, 219);
+    /* background-color: #1B4332; */
+    background-color:black;
     padding: 0px;
     margin: 0px;
     display: flex; 
@@ -112,7 +113,13 @@ a { /* Can and likely will change. Only turned red as its hard to see
 .browsing-button {
     margin-top:0.938rem;
     margin-left:1.875;
+    color:white;
 }
+
+.nav-bar-button {
+    background-color:black;
+}
+
 .logbtn,
 .createbtn,
 .addbtn,
@@ -125,6 +132,9 @@ a { /* Can and likely will change. Only turned red as its hard to see
     height:30.6px;
     font-size:.8rem;
     margin-left: 18px;
+    background-color: rgb(39, 38, 38);
+    color: white;
+    border:none;
 }
 
 #category-filter select {
