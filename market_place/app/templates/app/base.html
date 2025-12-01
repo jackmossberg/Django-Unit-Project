@@ -23,16 +23,12 @@
     </div>
 
     <div id="category-filter">
-        <form method="get" action="{% url 'item:browsing' %}">
-            {% if request.GET.query %}
-                <input type="hidden" name="query" value="{{ request.GET.query }}">
-            {% endif %}
-
+        <form method="get" action="{% url 'home' %}">
             <select name="category" onchange="this.form.submit()">
                 <option value="">All Categories</option>
-                {% for category in categories %}
+                {% for category in global_categories %}
                     <option value="{{ category.id }}"
-                        {% if selected_category and selected_category.id == category.id %}selected{% endif %}>
+                        {% if global_selected_category and global_selected_category.id == category.id %}selected{% endif %}>
                         {{ category.name }}
                     </option>
                 {% endfor %}
